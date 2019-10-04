@@ -3,7 +3,7 @@ pipeline{
   registry = "np4519/ci-cd"
   registryCredential = "norapete_dockerhub"
   dockerImage = ''
-}
+  }
   agent any
   stages{
     stage('Checkout SCM'){
