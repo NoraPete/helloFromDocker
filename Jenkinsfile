@@ -33,9 +33,7 @@ pipeline {
 
 		stage ('Deploy to AWS') {
 			steps {
-				withAWS(region:'eu-west-2',credentials:'awsmalachite2') {
-				sh 'eb deploy helloFromDocker-dev'
-				}
+				withAWS(region:'eu-west-2',credentials:'awsmalachite2') {}
 			}
 	
 		}
