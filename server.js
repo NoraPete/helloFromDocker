@@ -6,7 +6,7 @@ const PORT = 3000;
 const app = express();
 
 app.get('/', function(req, res) {
-  res.send('Hi from Docker!');
+  res.send('Hello from Docker!');
 });
 
 app.listen(PORT, () => {console.log(`Server is up and running on port ${PORT}`)});
