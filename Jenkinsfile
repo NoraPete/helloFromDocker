@@ -33,7 +33,9 @@ pipeline {
 
 		stage ('Deploy to AWS') {
 			steps {
-				withAWS(region:'eu-west-2',credentials:'awsmalachite2') {}
+				withAWS(region:'eu-west-2',credentials:'awsmalachite2') {
+                                
+                                }
 			}
 	
 		}
