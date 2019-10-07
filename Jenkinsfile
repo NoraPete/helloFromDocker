@@ -1,6 +1,6 @@
 pipeline {
 	environment {
-		registry = "np4519/ci-cd"
+		registry = "np4519/hello-from-docker-dev"
 		registryCredential = 'norapete_dockerhub'
 		dockerImage = ''
 	}
@@ -22,6 +22,9 @@ pipeline {
 		}
 
 		stage ('Deploy to dockerhub') {
+				when {
+					branch 'dev'
+				}
 			steps {
 				script {
 					docker.withRegistry( '', registryCredential ) {
@@ -32,6 +35,9 @@ pipeline {
 		}
 
 		stage ('Deploy to AWS') {
+				when {
+					branch 'master'
+				}
 			steps {
 				withAWS(region:'eu-west-2',credentials:'awsmalachite2') {
                                 	sh 'sh ./deploy.sh'
