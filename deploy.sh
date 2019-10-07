@@ -9,5 +9,5 @@ aws elasticbeanstalk create-application-version \
 
 aws elasticbeanstalk update-environment \
   --application-name "helloFromDocker" \
-  --environment-name "helloFromDocker-dev" \
+  --environment-name "helloFromDocker-prod" \
 --version-label helloFromDocker
